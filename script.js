@@ -224,6 +224,10 @@ function getMonsterAttackValue(level) {
   return hit;
 }
 
+function isMonsterHit() {
+  return Math.random() > .2 || hp < 20;
+}
+
 function dodge() {
   text.innerText = "You dodge the attack from the " + monsters[fighting].name + ".";
 }
