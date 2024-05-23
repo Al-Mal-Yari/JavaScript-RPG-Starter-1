@@ -92,7 +92,11 @@ const locations = [{
     "button functions": [restart, restart, restart],
     text: "You die."
   },
-  {  
+  {
+    name: "win",
+    "button text": ["Replay?", "Replay?", "Replay?"],
+    "button functions": [restart, restart, restart],
+    text: "You defeat the dragon! YOU WIN THE GAME!"
   }
 ]
 
