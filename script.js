@@ -153,13 +153,12 @@ function buyWeapon() {
     else {
       text.innerText = "You do not have enough gold to buy a weapon.";
     }
-    else {
+  } else {
       text.innerText = "You already have the most powerful weapon!";
       button2.innerText = "Sell weapon for 15 gold";
       button2.onclick = sellWeapon;
     }
   }
-}
 
 function sellWeapon() {
   if (inventory.length > 1) {
@@ -217,6 +216,12 @@ function attack() {
     text.innerText += " Your " + inventory.pop() + " breaks.";
     currentWeapon--;
   }
+}
+
+function getMonsterAttackValue(level) {
+  let hit = (level * 5) - (Math.floor(Math.random() * xp));
+  console.log(hit);
+  return hit;
 }
 
 function dodge() {
