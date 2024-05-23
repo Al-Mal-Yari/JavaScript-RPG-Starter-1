@@ -179,9 +179,29 @@ function goFight() {
 }
 
 function attack() {
-  
+  text.innerText = "The " + monsters[fighting].name + " attacks.";
+  text.innerText += " You attack it with your " + weapons[currentWeapon].name + ".";
+  if (isMonsterHit()) {
+    hp -= getMonsterAttackValue(monsters[fighting].level);
+  } else {
+    text.innerText += " You miss.";
+  }
+  monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;
+  healthText.innerText = hp;
+  monsterHealthText.innerText = monsterHealth;
+  if (hp <= 0) {
+    lose();
+  } else if (monsterHealth <= 0) {
+    fighting === 2 ? winGame() : defeatMonster();
+  }
+  if (Math.random() <= .1 && inventory.length !== 1) {
+    text.innerText += " Your " + inventory.pop() + " breaks.";
+    currentWeapon--;
+  }
 }
 
 function dodge() {
-  
+}
+
+function defeatMonster() {
 }
