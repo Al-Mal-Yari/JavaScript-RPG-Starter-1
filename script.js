@@ -5,5 +5,6 @@ let gold = 50;
 let currentWeapon = 0;
 let fighting;
 let monsterHealth;
-let inventory = ["stick"];
+// inventory = nilagay sa loob ng array yung mga items which is yung double bracket
+let inventory = ["stick", "dagger", "sword"];
 const button1 = document.querySelector("#button1");
