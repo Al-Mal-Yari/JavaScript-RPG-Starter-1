@@ -18,6 +18,9 @@ const goldText = document.querySelector("#goldText");
 const monsterStats = document.querySelector("#monsterStats");
 const monsterNameText = document.querySelector("#monsterName");
 const monsterHealthText = document.querySelector("#monsterHealth");
+
+const weapons = [];
+
 const locations = [{
   name: "town square",
   "button text": ["Go to store", "Go to cave", "Fight dragon"],
@@ -68,12 +71,14 @@ function goCave(){
 function fightDragon(){
   console.log("Fighting dragon.")
 }
-function buyHealth(){
+function buyHealth() {
   if(gold >= 10){
     gold -= 10;
     hp += 10;
     goldText.innerText = gold;
     healthText.innerText = hp;
+  } else {
+    text.innerText = "You do not have enough gold to buy health.";
   }
 }
 function buyWeapon(){
